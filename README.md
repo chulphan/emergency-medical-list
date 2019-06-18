@@ -14,20 +14,20 @@
 
 ## 사용된 기술
 
-[x] React.js
+- [x] React.js
 
-[x] Apollo(GraphQL)
+- [x] Apollo(GraphQL)
 
-[x] Express.js
+- [x] Express.js
 
-[x] BootStrap
+- [x] BootStrap
 
 ## 추가해야 할 기능
 
-[] 병원 목록을 불러오는 API.
+- [] 병원 목록을 불러오는 API.
 
-[] 리스트에 병원 이름, 전화번호, 진료항목, 주소를 표시.
+- [] 리스트에 병원 이름, 전화번호, 진료항목, 주소를 표시.
 
-[] 지역별 필터
+- [] 지역별 필터
 
-[] 검색(병원)
+- [] 검색(병원)
