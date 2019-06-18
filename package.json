@@ -1,0 +1,38 @@
+{
+  "name": "template_for_proj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Template for proj. This Proj will provide medical items provided by emergency room.",
+  "dependencies": {
+    "apollo-boost": "^0.4.2",
+    "apollo-server-express": "^2.6.2",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "graphql": "^14.3.1",
+    "mongoose": "^5.5.14",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.6",
+    "react-dom": "^16.8.6",
+    "reactstrap": "^8.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.0",
+    "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.19.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "scripts": {
+    "server": "nodemon ./server/server.js",
+    "client": "webpack-dev-server --mode development --open",
+    "dev": "concurrently \"yarn client\" \"yarn server\""
+  }
+}
