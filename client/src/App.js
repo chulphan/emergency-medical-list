@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { ApolloProvider } from "react-apollo";
 import apolloClient from "./config/createApolloClient";
-import { Posts } from "./modules";
+import { Posts, Emergencies } from "./modules";
 
 const App = () => (
   <ApolloProvider client={apolloClient}>
-    <Posts />
+    {/* <Posts /> */}
+    <Emergencies />
   </ApolloProvider>
 );
 

@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // #2. Create a query string to connect to MongoDB Server.
-const DB_URI = "mongodb://localhost:27017/apollo-app";
+const DB_URI = "mongodb://localhost:27017/emergency-info";
 
 // #3. Connect to MongoDB
 mongoose.connect(DB_URI, { useNewUrlParser: true });

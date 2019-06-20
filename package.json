@@ -6,11 +6,20 @@
   "description": "Template for proj. This Proj will provide medical items provided by emergency room.",
   "dependencies": {
     "apollo-boost": "^0.4.2",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-rest": "^0.7.3",
     "apollo-server-express": "^2.6.2",
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^14.3.1",
+    "graphql-anywhere": "^4.2.4",
+    "graphql-tag": "^2.10.1",
     "mongoose": "^5.5.14",
+    "qs": "^6.7.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
     "react-dom": "^16.8.6",
@@ -34,5 +43,8 @@
     "server": "nodemon ./server/server.js",
     "client": "webpack-dev-server --mode development --open",
     "dev": "concurrently \"yarn client\" \"yarn server\""
+  },
+  "proxy": {
+    "/": "http://localhost:3000"
   }
 }
