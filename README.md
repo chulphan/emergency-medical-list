@@ -26,7 +26,9 @@
 
 - [x] MongoDB
 
-## 추가해야 할 기능(ToDo)
+## 추가해야 할 기능 또는 해야할 일
+
+- [ ] python web scraper refactoring(!!!!!!!!)
 
 - [x] 병원 목록을 불러오는 API.(병원 목록을 크롤링해서 DB에 저장하는 것으로 대체)
 
