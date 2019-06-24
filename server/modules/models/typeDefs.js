@@ -19,23 +19,4 @@ const typeDefs = gql`
   }
 `;
 
-// }
-
-// type Post {
-//   _id: ID
-//   title: String
-//   content: String
-// }
-
-// type Query {
-//   emergency_list: [Emergency]
-//   emergency: Emergency
-//   posts: [Post]
-//   post: Post
-// }
-
-// type Mutation {
-//   addPost(title: String!, content: String!): Post
-// }
-
 module.exports = typeDefs;
