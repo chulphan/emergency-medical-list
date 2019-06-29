@@ -13,14 +13,14 @@ db = client["emergency-info"]
 
 collection = db["emergency_list"]
 
-list_url = f'http://apis.data.go.kr/B552657/ErmctInfoInqireService/getEgytListInfoInqire?serviceKey={SERVICE_KEY}'
+basic_url = f'http://apis.data.go.kr/B552657/ErmctInfoInqireService/getEgytListInfoInqire?serviceKey={SERVICE_KEY}'
 
 list_arr = []
 
 for i in range(1, 41):
-    list_url = list_url + '&pageNo=' + str(i)
+    list_url = basic_url + '&pageNo=' + str(i) + '&numOfRows=10'
     list_url_res = requests.get(list_url)
-
+    print("list_url ", list_url)
     converted_list = json.loads(json.dumps(xmltodict.parse(list_url_res.text)))
     emergency_list = converted_list["response"]["body"]["items"]["item"]
     
@@ -32,15 +32,17 @@ for i in range(1, 41):
 
             converted_emergency_detail = json.loads(json.dumps(xmltodict.parse(emergency_detail.text)))
 
-            list_of_treat = converted_emergency_detail["response"]["body"]["items"]["item"]["dgidIdName"]
-
+            # list_of_treat = ""
+            # if converted_emergency_detail["response"]["body"]["items"]["item"]["dgidIdName"] is not None:
+            #     list_of_treat = converted_emergency_detail["response"]["body"]["items"]["item"]["dgidIdName"]
+            
             extract_info = {
                 "hospital_name": emergency["dutyName"],
                 "hospital_call": emergency["dutyTel1"],
-                "hospital_emergency_call": emergency["dutyTel3"],
+                "hospital_emergency_call": emergency.get("dutyTel3", ""),
                 "hospital_address": emergency["dutyAddr"],
                 "hospital_id": emergency["hpid"],
-                "list_of_treat": list_of_treat
+                "list_of_treat": converted_emergency_detail["response"]["body"]["items"]["item"].get("dgidIdName", "")
             }
             list_arr.append(extract_info)
     elif len(emergency_list) == 1:

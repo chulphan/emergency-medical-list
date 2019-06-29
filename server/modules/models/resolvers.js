@@ -8,10 +8,15 @@ const Emergency = require("./emergency/model");
  *  the query "posts" in GraphQL schema.
  */
 
+const getEmergencyList = ({ limit = 10, offset = 0 }) =>
+  Emergency.find({})
+    .skip(offset)
+    .limit(limit);
+
 const resolvers = {
   Query: {
     // Query which returns posts list
-    emergency_list: () => Emergency.find({}),
+    emergency_list: (_, variables) => getEmergencyList(variables),
     emergency: _id => Emergency.find({ _id: _id })
   }
 

@@ -13,8 +13,8 @@
   width: 100%;
   margin: 7px auto;
   cursor: pointer;
-  color: #880a8e;
-  box-shadow: 1px 2px 3px rgba(136, 10, 142, 0.3);
+  color: #010c12;
+  box-shadow: 1px 2px 3px rgba(11, 94, 219, 0.3);
 }
 
 .post-form {
@@ -26,7 +26,7 @@
 
 .post-card:hover,
 .post-form:hover {
-  box-shadow: 2px 3px 4px rgba(136, 10, 142, 0.5);
+  box-shadow: 2px 3px 4px rgba(11, 94, 219, 0.5);
 }
 
 .submit-button {
