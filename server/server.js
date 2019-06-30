@@ -1,5 +1,6 @@
 // #1. Import express and apollo server
 const express = require("express");
+const path = require("path");
 const { ApolloServer } = require("apollo-server-express");
 
 // #2. Import mongoose
@@ -19,6 +20,10 @@ const app = express();
 
 // #7. Use the express application as middleware in Apollo Server
 server.applyMiddleware({ app });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/src/public/index.html"));
+});
 
 // #8. Set the port that the Express application will listen to
 app.listen(3000, () => {

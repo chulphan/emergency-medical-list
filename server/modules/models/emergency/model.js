@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const emergencySchema = new Schema(
   {
+    _id: String,
     hospital_name: String,
     hospital_call: String,
     hospital_emergency_call: String,

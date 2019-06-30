@@ -1,2 +1,2 @@
 export { Posts } from "./post";
-export { Emergencies } from "./emergency";
+export { Emergencies, Emergency } from "./emergency";

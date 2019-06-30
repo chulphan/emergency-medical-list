@@ -1,13 +1,14 @@
 import React from "react";
-import { Navbar, Nav, NavbarBrand, NavItem, NavLink } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import { Navbar, Nav, NavbarBrand, NavItem } from "reactstrap";
 
 const Header = () => {
   return (
     <Navbar color="faded" light>
-      <NavbarBrand href="/">응급실 진료목록</NavbarBrand>
+      <NavLink to="/">응급실 진료목록</NavLink>
       <Nav>
         <NavItem>
-          <NavLink href="#">게시판</NavLink>
+          <NavLink to="/test">게시판</NavLink>
         </NavItem>
       </Nav>
     </Navbar>

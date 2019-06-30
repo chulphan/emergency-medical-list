@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Card, CardTitle, CardBody, Spinner, Row, Col } from "reactstrap";
 
 const EmergencyList = ({ emergencies, emergenciesLoading, onLoadMore }) => {
@@ -33,24 +34,26 @@ const EmergencyList = ({ emergencies, emergenciesLoading, onLoadMore }) => {
   function showEmergencyList() {
     if (!emergenciesLoading && emergencies.length > 0) {
       return emergencies.map(emergency => (
-        <Row key={emergency._id}>
-          <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <Card key={emergency._id} body outline className="post-card">
-              <CardTitle>{emergency.hospital_name}</CardTitle>
-              <CardBody>
-                <React.Fragment>
-                  {emergency.hospital_address}
-                  <br />
-                  {emergency.hospital_call}
-                  <br />
-                  {emergency.hospital_emergency_call}
-                  <br />
-                  {emergency.list_of_treat}
-                </React.Fragment>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+        <NavLink key={emergency._id} to={`/${emergency.hospital_id}`}>
+          <Row>
+            <Col sm="12" md={{ size: 6, offset: 3 }}>
+              <Card key={emergency._id} body outline className="post-card">
+                <CardTitle>{emergency.hospital_name}</CardTitle>
+                <CardBody>
+                  <React.Fragment>
+                    {emergency.hospital_address}
+                    <br />
+                    {emergency.hospital_call}
+                    <br />
+                    {emergency.hospital_emergency_call}
+                    <br />
+                    {emergency.list_of_treat}
+                  </React.Fragment>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </NavLink>
       ));
     } else if (emergenciesLoading) {
       return (

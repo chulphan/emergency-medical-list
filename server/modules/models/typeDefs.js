@@ -15,7 +15,7 @@ const typeDefs = gql`
 
   type Query {
     emergency_list(limit: Int, offset: Int): [Emergency]
-    emergency: Emergency
+    emergency(hospital_id: String): Emergency
   }
 `;
 

@@ -11,6 +11,7 @@ export const GET_EMERGENCY_LIST = gql`
       hospital_call
       hospital_emergency_call
       list_of_treat
+      hospital_id
     }
   }
 `;
