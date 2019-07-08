@@ -1,11 +1,11 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./client/src/public/index.html"
-});
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./client/src/index.js",
+  entry: {
+    app: "./client/src/index.js"
+  },
   module: {
     rules: [
       {
@@ -29,8 +29,18 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./client/src/public/index.html"
+    })
+  ],
   devServer: {
     historyApiFallback: true
   },
-  plugins: [htmlPlugin]
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve("./dist"),
+    publicPath: "/"
+  }
 };

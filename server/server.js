@@ -21,8 +21,10 @@ const app = express();
 // #7. Use the express application as middleware in Apollo Server
 server.applyMiddleware({ app });
 
+app.use(express.static("dist"));
+
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/src/public/index.html"));
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 // #8. Set the port that the Express application will listen to
