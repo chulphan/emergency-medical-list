@@ -36,7 +36,7 @@ const EmergencyList = ({ emergencies, emergenciesLoading, onLoadMore }) => {
       return emergencies.map(emergency => (
         <NavLink key={emergency._id} to={`/${emergency.hospital_id}`}>
           <Row>
-            <Col sm="12" md={{ size: 6, offset: 3 }}>
+            <Col>
               <Card key={emergency._id} body outline className="post-card">
                 <CardTitle>{emergency.hospital_name}</CardTitle>
                 <CardBody>
@@ -77,7 +77,7 @@ const EmergencyList = ({ emergencies, emergenciesLoading, onLoadMore }) => {
     }
   }
 
-  return <div className="posts-container">{showEmergencyList()}</div>;
+  return <Card className="container">{showEmergencyList()}</Card>;
 };
 
 export default EmergencyList;
