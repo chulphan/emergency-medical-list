@@ -15,7 +15,10 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react"],
-            plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]]
+            plugins: [
+              ["@babel/plugin-proposal-decorators", { legacy: true }],
+              "@babel/plugin-syntax-dynamic-import"
+            ]
           }
         }
       },
@@ -40,6 +43,7 @@ module.exports = {
   },
   output: {
     filename: "[name].bundle.js",
+    chunkFilename: "[name].chunk.js",
     path: path.resolve("./dist"),
     publicPath: "/"
   }

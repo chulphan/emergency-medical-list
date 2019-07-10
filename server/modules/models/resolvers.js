@@ -1,5 +1,5 @@
 // #1. Import the model created with mongoose
-const Post = require("./post/model");
+const Comment = require("./comment/model");
 const Emergency = require("./emergency/model");
 const mongoose = require("mongoose");
 
@@ -21,13 +21,20 @@ const resolvers = {
     emergency: (_, { hospital_id }) => {
       return Emergency.findOne({ hospital_id });
     }
-  }
+  },
 
-  /**
-   * Mutation resolver addPost creates a new document in MongoDB
-   * in response to the "addPost" mutation in GraphQL schema.
-   * The mutation resolvers must return the created object.
-   */
+  Mutation: {
+    createdComment: (_, { nickname, content, ref_id }) => {
+      const comment = new Comment({
+        nickname,
+        content,
+        ref_id,
+        createdDate: new Date()
+      });
+
+      return comment.save();
+    }
+  }
 };
 
 module.exports = resolvers;

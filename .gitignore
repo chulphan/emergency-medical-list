@@ -4,3 +4,5 @@
 *.pyc
 env.py
 /dist/
+
+yarn-error.log
