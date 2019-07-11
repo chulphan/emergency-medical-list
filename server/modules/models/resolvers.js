@@ -20,7 +20,9 @@ const resolvers = {
     emergency_list: (_, variables) => getEmergencyList(variables),
     emergency: (_, { hospital_id }) => {
       return Emergency.findOne({ hospital_id });
-    }
+    },
+
+    comments: (_, { ref_id }) => Comment.find({ ref_id })
   },
 
   Mutation: {

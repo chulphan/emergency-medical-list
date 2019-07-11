@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "../../comment/containers";
+import { Comment, Comments } from "../../comment/containers";
 import { Card, CardTitle, CardBody, Spinner, Row, Col } from "reactstrap";
 
 const Emergency = ({ emergency, emergencyLoading }) => {
@@ -62,6 +62,7 @@ const Emergency = ({ emergency, emergencyLoading }) => {
     <div>
       {showEmergency()}
       {Comment(emergency && emergency._id)}
+      {Comments(emergency && emergency._id)}
     </div>
   );
 };

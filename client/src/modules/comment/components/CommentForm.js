@@ -47,7 +47,9 @@ const CommentForm = props => {
 
   return (
     <Card>
-      <CardTitle>댓글</CardTitle>
+      <CardTitle>
+        <h4>댓글</h4>
+      </CardTitle>
       <CardBody>
         <Form onSubmit={event => handleSubmit(event)}>
           <FormGroup>

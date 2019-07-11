@@ -30,6 +30,8 @@ const typeDefs = gql`
   type Query {
     emergency_list(limit: Int, offset: Int): [Emergency]
     emergency(hospital_id: String): Emergency
+
+    comments(ref_id: String): [Comment]
   }
 
   type Mutation {
