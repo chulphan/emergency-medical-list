@@ -5,13 +5,11 @@ import { Container, Row, Col } from "reactstrap";
 
 const Comments = ({ comments, commentsLoading }) => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CommentList comments={comments} commentsLoading={commentsLoading} />
-        </Col>
-      </Row>
-    </Container>
+    <Row>
+      <Col>
+        <CommentList comments={comments} commentsLoading={commentsLoading} />
+      </Col>
+    </Row>
   );
 };
 

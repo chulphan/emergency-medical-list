@@ -35,6 +35,16 @@ const CommentForm = props => {
   function handleSubmit(event) {
     event.preventDefault();
 
+    if (nickname.length === 0) {
+      alert("닉네임을 입력해주세요");
+      return false;
+    }
+
+    if (content.length === 0) {
+      alert("내용을 입력해주세요");
+      return false;
+    }
+
     props.createdComment({
       nickname,
       content,
@@ -47,10 +57,10 @@ const CommentForm = props => {
 
   return (
     <Card>
-      <CardTitle>
-        <h4>댓글</h4>
-      </CardTitle>
       <CardBody>
+        <CardTitle>
+          <h4>댓글</h4>
+        </CardTitle>
         <Form onSubmit={event => handleSubmit(event)}>
           <FormGroup>
             <Label for="nickname">작성자</Label>
@@ -74,7 +84,9 @@ const CommentForm = props => {
               value={content}
             />
           </FormGroup>
-          <Button type="submit">등록</Button>
+          <Button type="submit" color="primary" style={{ float: "right" }}>
+            등록
+          </Button>
         </Form>
       </CardBody>
     </Card>

@@ -1,16 +1,14 @@
 import React from "react";
 import { CommentForm } from "../components";
-import { Container, Row, Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 const Comment = ref_id => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CommentForm ref_id={ref_id} />
-        </Col>
-      </Row>
-    </Container>
+    <Row style={{ marginTop: "20px", marginBottom: "20px" }}>
+      <Col>
+        <CommentForm ref_id={ref_id} />
+      </Col>
+    </Row>
   );
 };
 
