@@ -22,7 +22,8 @@ const resolvers = {
       return Emergency.findOne({ hospital_id });
     },
 
-    comments: (_, { ref_id }) => Comment.find({ ref_id })
+    comments: (_, { ref_id }) =>
+      Comment.find({ ref_id }).sort({ createdDate: -1 })
   },
 
   Mutation: {
@@ -31,7 +32,7 @@ const resolvers = {
         nickname,
         content,
         ref_id,
-        createdDate: new Date()
+        createdDate: new Date().toLocaleString("ko")
       });
 
       return comment.save();

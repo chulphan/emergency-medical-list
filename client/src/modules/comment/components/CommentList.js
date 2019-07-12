@@ -6,7 +6,12 @@ const CommentList = ({ comments, commentsLoading }) => {
     if (!commentsLoading && comments && comments.length > 0) {
       return comments.map(comment => (
         <Card key={comment._id} body outline>
-          <CardTitle>작성자: {comment.nickname}</CardTitle>
+          <CardTitle>
+            작성자: {comment.nickname}
+            <p style={{ textAlign: "right" }}>
+              {new Date(parseInt(comment.createdDate)).toLocaleString("ko")}
+            </p>
+          </CardTitle>
           <CardBody>{comment.content}</CardBody>
         </Card>
       ));
