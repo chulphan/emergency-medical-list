@@ -22,7 +22,7 @@
     "graphql": "^14.3.1",
     "graphql-anywhere": "^4.2.4",
     "graphql-tag": "^2.10.1",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "qs": "^6.7.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
